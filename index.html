@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Start Page</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <style>
+    html{
+      scroll-behavior:smooth;
+    }
+    body{
+      background: black;
+      overflow: hidden;
+      behavior: smooth;
+    }
+    .text{
+      font-family: Prompt,sans-serif;
+      font-kerning: auto;
+    }
+
+    @media screen and (min-width:1280px){
+
+      .HeaderMailContainer{
+        margin-top: 1vw;
+        margin-right: 7vw;
+      }
+      .HeaderNameContainer{
+        margin-top: .5vw;
+        margin-left: 6vw;
+      }
+      .Name{
+        font-weight: 500;
+      }
+      .MainContainer{
+        margin-top: 5vw;
+        margin-left: .5vw;
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+      .Intro{
+        font-size: 6rem;
+        font-weight: 600;
+        -webkit-text-stroke: 3px #c0c0c0;
+        text-shadow: -3px 10px 20px #c0c0c0,
+        1px 10px 10px dimgrey;
+        background-color: -webkit-linear-gradient(to right, #8e9eab, #eef2f3);
+      }
+      .IntroContainer{
+        margin-left: 5vw;
+        margin-top: -2vw;
+
+      }
+      .Intro2{
+        display: inline-block;
+        margin-top: -5vw;
+
+      }
+      .GifContainer{
+        width:27vw;
+        height: 27vw;
+        transform:translateX(2vw);
+        margin-top: -3vw;
+
+      }
+      .InformationCardContainer{
+        width: 30vw;
+        margin-right: 6vw;
+        background: black;
+
+      }
+      .InformationCard{
+        margin-top: -1.5vw;
+        margin-left: 3vw;
+      }
+      .StateContainer{
+        width: inherit;
+        margin-top: -1.5vw;
+        column-gap: 1vw;
+      }
+      .StateIndication{
+        width: .3vw;
+        height: .3vw;
+        border-radius: 50%;
+        background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+      .cardtext{
+        font-weight: 420;
+        font-kerning: auto;
+        font-style: italic;
+        color: #c0c0c0;
+      }
+      .infortext{
+        font-size: .75rem;
+      }
+      .corner-border {
+        width: 40px;  /* Adjust the size based on the appearance you want */
+        height: 30px;
+        margin-left: auto;
+        border-top: 2px solid white;   /* Top border */
+        border-right: 2px solid white; /* Right border */
+      }
+
+      .ParallaxScrolling{
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: repeat;
+        background-size: cover;
+        min-height: 90vh;
+      }
+      .EducationContainer{
+        margin-top: 30vw;
+        margin-left: 5.5vw;
+      }
+      .EducationImageContainer{
+        width: 10vw;
+        height: 10vw;
+      }
+      .Education,.Experience,.AboutMe{
+        transform: translateY(-22vw);
+        font-size: 6rem;
+        font-weight: 600;
+        -webkit-text-stroke: 3px #c0c0c0;
+        text-shadow: -3px 10px 20px #c0c0c0,
+        1px 10px 10px dimgrey;
+        background-color: -webkit-linear-gradient(to right, #8e9eab, #eef2f3);
+      }
+      .SchoolContainer,.DurationContainer,.MajorContainer{
+        transform: translateY(-22vw);
+        column-gap: 1vw;
+        margin-left: .8vw;
+
+      }
+      .School,.Duration,.Major{
+        font-weight: 450;
+        font-size: 1.3rem;
+        font-style: italic;
+      }
+      .ExperienceContainer{
+        margin-top: 7vw;
+        margin-left: 5vw;
+      }
+      .ExperienceTitle{
+        transform: translateY(7vw);
+        margin-left:.5vw;
+      }
+      .ExperienceDetail{
+        transform: translateY(-15vw);
+        margin-left: -1vw;
+      }
+      .Divisor{
+        width: 80vw;
+
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+        color: #c0c0c0;
+      }
+      .Divisor hr{
+        margin-left: 1vw;
+        margin-right: 1vw;
+      }
+
+      .Project1Container,.Project2Container{
+        column-gap: 10vw;
+        margin-left: 1.5vw;
+        justify-content: space-around;
+
+      }
+      .Project3Container{
+        column-gap: 10vw;
+        margin-left: 1.5vw;
+      }
+      .Project1Name,.Project2Name,.Project3Name{
+        font-size: calc(1.2vw);
+        text-shadow: 4px 4px 3px #e1e1e1;
+        margin-left: 1vw;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .Project3Name{
+        width: 12vw;
+      }
+      .Project1Genre,.Project2Genre,.Project3Genre{
+        font-size: 1rem;
+        font-style: italic;
+        font-weight: 400;
+      }
+      .Project1Genre{
+        margin-left: 3.5vw;
+      }
+      .Project2Genre{
+        margin-left: 4.5vw;
+      }
+      .Project3Genre{
+        margin-left: -1.7vw;
+      }
+      .IconContainer{
+        width: 2.2vw;
+        height: 2.2vw;
+        border-radius: 50%;
+        border: 3px dashed lightgoldenrodyellow;
+        background: transparent;
+
+      }
+      .IconContainer a{
+        color:#e1e1e1;
+        text-decoration: none;
+      }
+      .Project1TechContainer,.Project2TechContainer,.Project3TechContainer{
+        column-gap: 2vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        width: 20vw;
+
+      }
+      .Project3TechContainer{
+        margin-left: 2vw;
+      }
+
+      .techContainer{
+        color: #979695;
+        width: max-content;
+        height: auto;
+        border-radius: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border: 1px solid lightgoldenrodyellow;
+        padding-left: .65vw;
+        padding-right: .65vw;
+        padding-top: .5vw;
+        padding-bottom: .5vw;
+        font-size: .9rem;
+        font-weight: 450;
+        font-style: italic;
+      }
+      .IconContainer{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        transform: translateX(100%);
+
+      }
+      .IconContainer1{
+        margin-left: 1vw;
+      }
+      .IconContainer2{
+        margin-left: 1.2vw;
+      }
+      .IconContainer3{
+        position: relative;
+        transform: translateX(2vw);
+      }
+      .AboutMeContainer{
+        transform:translateY(-16vw);
+        margin-left: 5vw;
+
+      }
+      .IntroductionContainer{
+        width: 50vw;
+      }
+      .AboutMeDetail{
+        column-gap: 10vw;
+      }
+      .Container{
+        width: fit-content;
+      }
+      .PreferredField{
+        width: 48vw;
+
+      }
+      .TechSkillContainer{
+        width: 90%;
+        height: 10vw;
+        column-gap: 2.5vw;
+      }
+      .TechSkill{
+        border: 1px solid lightgoldenrodyellow;
+        border-radius: 2rem;
+        width: 6vw;
+        height: fit-content;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 2vw;
+        margin-top: 1vw;
+        font-size: .9rem;
+        font-weight: 300;
+        font-style: italic;
+        font-kerning: auto;
+        padding: .3vw;
+      }
+      .SelfImageContainer{
+        width: 20vw;
+        height: 20vw;
+      }
+      .Foundation{
+        width: 20%;
+      }
+      .WorkStyle{
+        font-weight: 450;
+        font-size: 1.2rem;
+        font-style: italic;
+        font-kerning: auto;
+      }
+
+      .Role,.PreferredField{
+        font-weight: 350;
+        font-size: .95rem;
+        font-style: italic;
+        font-kerning: auto;
+      }
+
+
+
+
+    }
+  </style>
+</head>
+<body>
+<header class="header" style='z-index:999;'>
+  <div class=" HeaderContainer"  style="display:flex;box-sizing: border-box;flex-direction: row;width: 100%;height:fit-content;column-count: 2;justify-content: space-between;align-items: center;position:fixed;">
+    <div class=" HeaderNameContainer" style="postion:relative;width:max-contern;height:fit-content;">
+      <h4 class=" text Name" style='color: #c0c0c0;'>Phung Nghia</h4>
+    </div>
+    <div class="HeaderMailContainer" style="position: relative; width:max-content;height:fit-content">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=phungnghia291@gmail.com" target="_blank" class=" text Mail" style='color:#E1E1E1;position: relative;'>phungnghia291@gmail.com</a>
+    </div>
+  </div>
+</header>
+<main class='main' style="position: reltive;">
+  <div class='MainContainer' style="box-sizing: border-box;width: 100%;height:100vh;position: absolute;">
+    <!<!-- LANDING PAGE -->
+    <div class='IntroContainer page' style='position:relative;width:fit-content;height:fit-content;'>
+      <h1 class='text Intro Intro1' style='color:#E1E1E1'>CREATIVE</h1>
+      <h1 class='text Intro Intro2' style='color:#E1E1E1'>CODER</h1>
+    </div>
+    <div class="FooterLandingPage" style="width:100%;height:fit-content;postion:relative;box-sizing: border-box;display: inline-flex;flex-direction: row;column-count: 2;justify-content: space-between;align-items: center">
+      <div class='GifContainer' style='box-sizing: border-box;border: none;background-color: transparent;'>
+        <img src='https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTRlbzYyZzFraml3aWpyOTZ3bndqOGR0bW1ibDQybGRpNDYzeTNrbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VgBk8EZQILIaPIJymY/giphy-downsized-large.gif' alt='coding boy' style="width: inherit;height:inherit;border:0;background: transparent" class="Gif">
+      </div>
+      <div class="InformationCardContainer" style="height:fit-content;box-sizing: border-box;background: linear-gradient(to right, #000000, #434343);">
+        <div class="corner-border" style="position:relative;top: 0;"></div>
+        <div class="InformationCard" style="width:inherit;height: fit-content;border: transparent;">
+          <h6 class="text cardtext infortext">Ho Chi Minh city, Vietnam</h6>
+          <h6 class="text cardtext infortext">Junior student at Ho Chi Minh International University</h6>
+          <div class="StateContainer" style="height: fit-content;display:flex;flex-direction:row;align-items: center;position: relative;justify-content: flex-start; ">
+            <div class="StateIndication"></div>
+            <h5 class="text cardtext State">Available</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ParallaxScrolling"></div>
+    <!<!-- Education -->
+    <div class="EducationContainer page" style="width: fit-content;height: fit-content;position: relative;">
+      <div class="EducationTitle" style="width: inherit;height: auto;box-sizing: border-box;">
+        <h1 class="text Education" style="color: #e1e1e1;">Education</h1>
+      </div>
+      <div class="EducationDetail" style="width:fit-content;height: fit-content;">
+
+        <div class="SchoolContainer" style="width:inherit;heihgt:inherit;display: flex;flex-direction: row;align-items: center;">
+          <li class="text School" style="color: #e1e1e1;">School:</li>
+          <h3 class="text" style="color: #838383;font-style: italic;">Ho Chi Minh International University ( HCMIU )</h3>
+        </div>
+
+        <div class="DurationContainer" style="width:inherit;height:inherit;display: flex;flex-direction: row;align-items: center;">
+          <li class="text Duration" style="color: #e1e1e1;">Duration:</li>
+          <h3 class="text" style="color: #838383;font-style: italic;">09/2021 to 09/2025</h3>
+        </div>
+
+        <div class="MajorContainer" style="width:inherit;height:inherit;display: flex;flex-direction: row;align-items: center;">
+          <li class="text Major" style="color: #e1e1e1;">Major: </li>
+          <h3 class=" text" style="color: #838383;font-style: italic;">Computer Science</h3>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!<!-- EXPERIENCE -->
+
+    <div class="ParallaxScrolling"></div>
+    <div class="ExperienceContainer page" style="width: fit-content;height: fit-content;position: relative;">
+      <div class="ExperienceTitle" style="width: inherit;height: auto;box-sizing: border-box;">
+        <h1 class="text Experience" style="color: #e1e1e1;">Experience</h1>
+      </div>
+      <div class="ExperienceDetail" style="width:fit-content;height: fit-content;display: flex;flex-direction: column;align-content: center;">
+        <div class="Divisor">
+          <hr style="width:inherit">
+        </div>
+        <div class="Project1Container" style="width:fit-content;height:inherit;display: flex;flex-direction: row;align-items: center;box-sizing: border-box;">
+          <li class="text Project1Name" style="color: #e1e1e1;">Chess game</li>
+          <h4 class="text Project1Genre" style="color:lightgray;font-style: italic;">Team Project</h4>
+          <div class="Project1TechContainer" style="display:flex;flex-direction: row;flex-flow: row;">
+            <h4 class="text techContainer">Java</h4>
+            <h4 class="text techContainer">Design Pattern</h4>
+          </div>
+          <div class="IconContainer IconContainer1" style="display:flex;justify-content: space-around;align-items: center;align-self: center">
+            <a href="https://github.com/nguyenhuybao1108/dsaProject2023?v=1" class="fa-solid fa-link"></a>
+          </div>
+        </div>
+        <div class="Divisor">
+          <hr style="width:inherit;">
+        </div>
+        <div class="Project2Container" style="width:inherit;height:inherit;display: flex;flex-direction: row;align-items: center;">
+          <li class="text Project2Name" style="color: #e1e1e1;">RPG game</li>
+          <h4 class="text Project2Genre" style="color:lightgray;font-style: italic;">Team Project</h4>
+          <div class="Project2TechContainer" style="display:flex;flex-direction: row;flex-flow: row;">
+            <h4 class="text techContainer">Java</h4>
+            <h4 class="text techContainer">Design Pattern</h4>
+          </div>
+          <div class="IconContainer IconContainer2" style="display:flex;justify-content: space-around;align-items: center;align-self: center">
+            <a href="https://github.com/Hoanghuygia/HeroAdventure" class="fa-solid fa-link"></a>
+          </div>
+        </div>
+        <div class="Divisor">
+          <hr style="width:inherit;">
+        </div>
+        <div class="Project3Container" style="width:inherit;height:inherit;display: flex;flex-direction: row;align-items: center;">
+          <li class="text Project3Name" style="color: #e1e1e1;">Major prediction model</li>
+          <h4 class="text Project3Genre" style="color:lightgray;font-style: italic;">Team Project</h4>
+          <div class="Project3TechContainer" style="display:flex;flex-direction: row;">
+            <h4 class="text techContainer">Python</h4>
+            <h4 class="text techContainer">Node.js</h4>
+            <h4 class="text techContainer">React</h4>
+
+          </div>
+          <div class="IconContainer IconContainer3" style="display:flex;justify-content: space-around;align-items: center;align-self: center;">
+            <a href="https://github.com/Schrrodinger/PEAS-Predictive-Educational-Advisory-System" class="fa-solid fa-link"></a>
+          </div>
+        </div>
+        <div class="Divisor">
+          <hr style="width:inherit;">
+        </div>
+      </div>
+    </div>
+    <div class="ParallaxScrolling"></div>
+    <div class="AboutMeContainer" style="width: fit-content;height: fit-content;position: relative;">
+      <div class="AhoutMeTitle" style="width: inherit;height: auto;box-sizing: border-box;">
+        <span class="text AboutMe" style="color: #e1e1e1;">About Me</span>
+      </div>
+      <div class="AboutMeDetail" style="width:100vw;height: fit-content;display: flex;flex-direction:row;align-content: center;">
+        <div class="IntroductionContainer" style="height:auto;">
+          <div class="WorkStyleContainer" style="width:inherit;height:fit-content;">
+            <h3 class="text WorkStyle" style="color:lightgray">Working with flexibility, open-minds, consistence and meticulousness </h3>
+          </div>
+          <div class="RoleContainer" style="width:inherit;height:fit-content;display:flex;flex-wrap: wrap;">
+            <h3 class="text Role" style="color:lightgrey;">I am a junior student at Ho Chi Minh International University ( HCMIU )</h3>
+          </div>
+          <div class="PreferredFieldContainer" style="width: inherit;height:fit-content;">
+            <h3 class="text PreferredField" style="color:lightgrey;">My preferred fields is cyber security. I can both work with front-end and back-end parts. For front-end, I primarily used React and Foundation-sites library to create responsive website. For back-end side, I can use different languages such as Go, Python, Java , JS and some database platforms such as MySQL, MSSQL and PostgreSQl to solve the problem.Especially, I am on the way to discover the world of cyber security with my first CCNA certification.</h3>
+          </div>
+          <div class="TechSkillContainer" style="height:fit-content;display:flex;flex-direction: row;flex-wrap: wrap;align-items: center;align-self: center;justify-content: flex-start;">
+            <div class="text TechSkill">React</div>
+            <div class="text TechSkill Foundation">Foundation-sites</div>
+            <div class="text TechSkill">Go</div>
+            <div class="text TechSkill">Javascript</div>
+            <div class="text TechSkill">Java</div>
+            <div class="text TechSkill">Python</div>
+            <div class="text TechSkill">MySQL</div>
+            <div class="text TechSkill">MSSQL</div>
+            <div class="text TechSkill">PostgreSQL</div>
+          </div>
+        </div>
+
+        <div class="SelfImageContainer">
+          <img src="https://cdn.prod.website-files.com/659f77ad8e06050cc27ed531/65ef63f6bd30ab838939a4ae_Developer%20productivity%20tools%202024.webp" style="width:inherit;height:inherit;filter:grayscale(100%);-webkit-filter:grayscale(100%);">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+</body>
+</html>
